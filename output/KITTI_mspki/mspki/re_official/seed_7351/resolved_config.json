@@ -1,0 +1,151 @@
+{
+  "code_version": "kitti-mspki-official-v2-fair",
+  "seed": 7351,
+  "variant": "mspki",
+  "canonical_variant": "mspki",
+  "working_dir": "/home/zouzichao/PARENet/experiments/KITTI_mspki",
+  "root_dir": "/home/zouzichao/PARENet",
+  "data": {
+    "dataset_root": "/home/zouzichao/PARENet/datasets/KITTI",
+    "metadata_root": "/home/zouzichao/PARENet/data/KITTI/metadata"
+  },
+  "train": {
+    "batch_size": 1,
+    "num_workers": 8,
+    "point_limit": 30000,
+    "use_augmentation": true,
+    "augmentation_noise": 0.01,
+    "augmentation_min_scale": 0.8,
+    "augmentation_max_scale": 1.1,
+    "augmentation_shift": 2.0,
+    "augmentation_rotation": 1.0,
+    "augmentation_crop": true,
+    "point_keep_ratio": 0.7,
+    "matching_radius": 0.6
+  },
+  "test": {
+    "batch_size": 1,
+    "num_workers": 8,
+    "point_limit": null
+  },
+  "eval": {
+    "acceptance_overlap": 0.0,
+    "acceptance_radius": 1.0,
+    "inlier_ratio_threshold": 0.05,
+    "rre_threshold": 5.0,
+    "rte_threshold": 2.0,
+    "feat_rre_threshold": 20.0
+  },
+  "ransac": {
+    "distance_threshold": 0.3,
+    "num_points": 4,
+    "num_iterations": 5000
+  },
+  "optim": {
+    "lr": 0.0001,
+    "lr_decay": 0.95,
+    "lr_decay_steps": 4,
+    "weight_decay": 1e-06,
+    "max_epoch": 100,
+    "grad_acc_steps": 1
+  },
+  "backbone": {
+    "num_stages": 4,
+    "num_neighbors": [
+      35,
+      35,
+      35,
+      35
+    ],
+    "init_voxel_size": 0.3,
+    "subsample_ratio": 2.5,
+    "kernel_size": 4,
+    "share_nonlinearity": false,
+    "conv_way": "edge_conv",
+    "use_xyz": true,
+    "init_dim": 96,
+    "output_dim": 64,
+    "coarse_context": "none",
+    "fine_context": "mspki",
+    "spsa_partial_ratio": 0.5,
+    "spsa_qk_channels": 32,
+    "spsa_ffn_ratio": 2.0,
+    "mspki_neighbor_scales": [
+      8,
+      16,
+      32
+    ],
+    "mspki_branch_channels": 16,
+    "mspki_ffn_ratio": 2.0,
+    "layer_scale_init": 0.1
+  },
+  "preprocess": {
+    "query_chunk_size": 1024,
+    "support_chunk_size": 4096,
+    "require_cuda": true
+  },
+  "model": {
+    "ground_truth_matching_radius": 0.6,
+    "num_points_in_patch": 128,
+    "estimate_transform_during_training": true
+  },
+  "coarse_matching": {
+    "num_targets": 128,
+    "overlap_threshold": 0.1,
+    "num_correspondences": 256,
+    "dual_normalization": true
+  },
+  "geotransformer": {
+    "input_dim": 768,
+    "hidden_dim": 96,
+    "output_dim": 128,
+    "num_heads": 4,
+    "blocks": [
+      "self",
+      "cross",
+      "self",
+      "cross",
+      "self",
+      "cross"
+    ],
+    "sigma_d": 4.8,
+    "sigma_a": 15,
+    "angle_k": 3,
+    "reduction_a": "max"
+  },
+  "fine_matching": {
+    "topk": 2,
+    "acceptance_radius": 0.6,
+    "confidence_threshold": 0.005,
+    "num_hypotheses": 1000,
+    "num_refinement_steps": 5,
+    "re_feature_source": "official"
+  },
+  "coarse_loss": {
+    "positive_margin": 0.1,
+    "negative_margin": 1.4,
+    "positive_optimal": 0.1,
+    "negative_optimal": 1.4,
+    "log_scale": 40,
+    "positive_overlap": 0.1
+  },
+  "fine_loss": {
+    "positive_radius": 0.6,
+    "negative_radius": 1.2,
+    "positive_margin": 0.1,
+    "negative_margin": 1.4
+  },
+  "loss": {
+    "weight_coarse_loss": 1.0,
+    "weight_fine_ri_loss": 1.0,
+    "weight_fine_re_loss": 1.0
+  },
+  "output_root": "/home/zouzichao/PARENet/output/KITTI_mspki",
+  "run_name": "mspki/re_official/seed_7351",
+  "output_dir": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351",
+  "snapshot_dir": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351/snapshots",
+  "log_dir": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351/logs",
+  "event_dir": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351/wandb_events",
+  "feature_dir": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351/features",
+  "registration_dir": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351/registration"
+}

@@ -1,0 +1,251 @@
+{
+  "code_version": "mspki-official-protocol-v1",
+  "seed": 7351,
+  "variant": "mspki",
+  "canonical_variant": "mspki",
+  "working_dir": "/home/zouzichao/PARENet/experiments/3DMatch_mechanism_ablation",
+  "root_dir": "/home/zouzichao/PARENet",
+  "data": {
+    "dataset_root": "/home/zouzichao/PARENet/datasets/3DMatch",
+    "metadata_root": "/home/zouzichao/PARENet/data/3DMatch/metadata"
+  },
+  "train": {
+    "batch_size": 1,
+    "num_workers": 12,
+    "point_limit": 30000,
+    "use_augmentation": true,
+    "augmentation_noise": 0.005,
+    "augmentation_rotation": 1.0,
+    "augmentation_crop": true,
+    "point_keep_ratio": 0.7,
+    "matching_radius": 0.1
+  },
+  "test": {
+    "batch_size": 1,
+    "num_workers": 12,
+    "point_limit": null,
+    "rotation_mode": "none",
+    "rotation_seed": 7351
+  },
+  "eval": {
+    "acceptance_overlap": 0.0,
+    "acceptance_radius": 0.1,
+    "inlier_ratio_threshold": 0.05,
+    "rmse_threshold": 0.2,
+    "rre_threshold": 15.0,
+    "rte_threshold": 0.3,
+    "feat_rre_threshold": 20.0
+  },
+  "ransac": {
+    "distance_threshold": 0.05,
+    "num_points": 3,
+    "num_iterations": 1000
+  },
+  "optim": {
+    "lr": 0.0001,
+    "lr_decay": 0.95,
+    "lr_decay_steps": 1,
+    "weight_decay": 1e-06,
+    "max_epoch": 40,
+    "grad_acc_steps": 1
+  },
+  "backbone": {
+    "num_stages": 4,
+    "num_neighbors": [
+      35,
+      35,
+      35,
+      35
+    ],
+    "init_voxel_size": 0.025,
+    "subsample_ratio": 2,
+    "kernel_size": 4,
+    "share_nonlinearity": false,
+    "conv_way": "edge_conv",
+    "use_xyz": true,
+    "init_dim": 96,
+    "output_dim": 255,
+    "fine_vector_channels": 85,
+    "coarse_context": "none",
+    "fine_context": "mspki",
+    "spsa_partial_ratio": 0.5,
+    "spsa_qk_channels": 32,
+    "spsa_ffn_ratio": 2.0,
+    "mspki_neighbor_scales": [
+      8,
+      8,
+      8
+    ],
+    "mspki_branch_channels": 16,
+    "mspki_ffn_ratio": 2.0,
+    "mspki_fusion": "learned",
+    "layer_scale_init": 0.1
+  },
+  "preprocess": {
+    "backend": "torch_gpu",
+    "query_chunk_size": 1024,
+    "support_chunk_size": 4096,
+    "require_cuda": true
+  },
+  "model": {
+    "ground_truth_matching_radius": 0.05,
+    "num_points_in_patch": 64,
+    "estimate_transform_during_training": true
+  },
+  "coarse_matching": {
+    "num_targets": 128,
+    "overlap_threshold": 0.1,
+    "num_correspondences": 256,
+    "dual_normalization": true
+  },
+  "geotransformer": {
+    "input_dim": 768,
+    "hidden_dim": 192,
+    "output_dim": 192,
+    "num_heads": 4,
+    "blocks": [
+      "self",
+      "cross",
+      "self",
+      "cross",
+      "self",
+      "cross"
+    ],
+    "sigma_d": 0.1,
+    "sigma_a": 15,
+    "angle_k": 3,
+    "reduction_a": "max"
+  },
+  "fine_matching": {
+    "topk": 3,
+    "acceptance_radius": 0.1,
+    "confidence_threshold": 0.005,
+    "num_hypotheses": 2000,
+    "num_refinement_steps": 5,
+    "re_feature_source": "official"
+  },
+  "coarse_loss": {
+    "positive_margin": 0.1,
+    "negative_margin": 1.4,
+    "positive_optimal": 0.1,
+    "negative_optimal": 1.4,
+    "log_scale": 24,
+    "positive_overlap": 0.1
+  },
+  "fine_loss": {
+    "positive_radius": 0.05,
+    "negative_radius": 0.2,
+    "positive_margin": 0.1,
+    "negative_margin": 1.4
+  },
+  "loss": {
+    "weight_coarse_loss": 1.0,
+    "weight_fine_ri_loss": 1.0,
+    "weight_fine_re_loss": 1.0
+  },
+  "paper": {
+    "spsa_ratios": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "mspki_support_sets": [
+      [
+        8,
+        16
+      ],
+      [
+        8,
+        16,
+        24
+      ],
+      [
+        8,
+        16,
+        32
+      ]
+    ],
+    "layer_scale_inits": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "density_keep_ratios": [
+      1.0,
+      0.75,
+      0.5,
+      0.25
+    ],
+    "noise_stds": [
+      0.0,
+      0.0025,
+      0.005,
+      0.01
+    ],
+    "combined_perturbations": [
+      [
+        0.5,
+        0.005
+      ],
+      [
+        0.25,
+        0.01
+      ]
+    ],
+    "fhp_hypothesis_budgets": [
+      100,
+      250,
+      500,
+      1000,
+      2000
+    ],
+    "ransac_corr_budgets": [
+      50,
+      100,
+      250,
+      500,
+      null
+    ],
+    "overlap_bins": [
+      [
+        0.1,
+        0.2
+      ],
+      [
+        0.2,
+        0.3
+      ],
+      [
+        0.3,
+        0.5
+      ],
+      [
+        0.5,
+        Infinity
+      ]
+    ],
+    "equivariance_num_pairs": 12,
+    "equivariance_rotations_per_pair": 2,
+    "equivariance_precisions": [
+      "float32",
+      "float64"
+    ]
+  },
+  "transfer": {
+    "whu_tls_root": null,
+    "kitti_root": null,
+    "whu_rre_threshold": null,
+    "whu_rte_threshold": null,
+    "kitti_rre_threshold": null,
+    "kitti_rte_threshold": null
+  },
+  "output_root": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation",
+  "run_name": "mspki/re_official/seed_7351/ms8-8-8",
+  "exp_name": "mspki/re_official/seed_7351/ms8-8-8",
+  "output_dir": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8",
+  "snapshot_dir": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8/snapshots",
+  "log_dir": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8/logs",
+  "event_dir": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8/wandb_events",
+  "feature_dir": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8/features",
+  "registration_dir": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8/registration"
+}

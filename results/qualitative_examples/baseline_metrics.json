@@ -1,0 +1,22 @@
+{
+  "variant": "baseline",
+  "seed": 7351,
+  "seq": 9,
+  "src_frame": 25,
+  "ref_frame": 40,
+  "test_pair_index": 307,
+  "checkpoint": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\output\\KITTI_mspki\\baseline\\re_official\\seed_7351\\snapshots\\best.pth.tar",
+  "checkpoint_sha256": "cefda7e8b3619b3b663b935852c7fb635134274f997cccce396ba88234d4ff3b",
+  "density_keep_ratio": 1.0,
+  "density_mask_seed": 9017,
+  "rre_deg": 174.99459838867188,
+  "rte_m": 18.87615203857422,
+  "metrics": {
+    "PIR": 0.02734375,
+    "IR": 0.012000000104308128,
+    "RRE": 174.99459838867188,
+    "RTE": 18.87615203857422,
+    "RR": 0.0
+  },
+  "npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\fig5_refresh_20260927\\latest_pair\\seq09_ref40_src25_baseline.npz"
+}

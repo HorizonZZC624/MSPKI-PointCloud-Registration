@@ -1,0 +1,290 @@
+[2026-09-22 21:21:34] [INFO] Command executed: experiments/3DMatch_mechanism_ablation/eval.py --benchmark 3DMatch --variant mspki --seed 7351 --re_feature_source official --mspki_scales 8 --mspki_fusion learned --output_root /home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8 --method fhp
+[2026-09-22 21:21:34] [INFO] Configs:
+{
+    "code_version": "mspki-official-protocol-v1",
+    "seed": 7351,
+    "variant": "mspki",
+    "canonical_variant": "mspki",
+    "working_dir": "/home/zouzichao/PARENet/experiments/3DMatch_mechanism_ablation",
+    "root_dir": "/home/zouzichao/PARENet",
+    "data": {
+        "dataset_root": "/home/zouzichao/PARENet/datasets/3DMatch",
+        "metadata_root": "/home/zouzichao/PARENet/data/3DMatch/metadata"
+    },
+    "train": {
+        "batch_size": 1,
+        "num_workers": 12,
+        "point_limit": 30000,
+        "use_augmentation": true,
+        "augmentation_noise": 0.005,
+        "augmentation_rotation": 1.0,
+        "augmentation_crop": true,
+        "point_keep_ratio": 0.7,
+        "matching_radius": 0.1
+    },
+    "test": {
+        "batch_size": 1,
+        "num_workers": 8,
+        "point_limit": null,
+        "rotation_mode": "none",
+        "rotation_seed": 7351
+    },
+    "eval": {
+        "acceptance_overlap": 0.0,
+        "acceptance_radius": 0.1,
+        "inlier_ratio_threshold": 0.05,
+        "rmse_threshold": 0.2,
+        "rre_threshold": 15.0,
+        "rte_threshold": 0.3,
+        "feat_rre_threshold": 20.0
+    },
+    "ransac": {
+        "distance_threshold": 0.05,
+        "num_points": 3,
+        "num_iterations": 1000
+    },
+    "optim": {
+        "lr": 0.0001,
+        "lr_decay": 0.95,
+        "lr_decay_steps": 1,
+        "weight_decay": 1e-06,
+        "max_epoch": 40,
+        "grad_acc_steps": 1
+    },
+    "backbone": {
+        "num_stages": 4,
+        "num_neighbors": [
+            35,
+            35,
+            35,
+            35
+        ],
+        "init_voxel_size": 0.025,
+        "subsample_ratio": 2,
+        "kernel_size": 4,
+        "share_nonlinearity": false,
+        "conv_way": "edge_conv",
+        "use_xyz": true,
+        "init_dim": 96,
+        "output_dim": 255,
+        "fine_vector_channels": 85,
+        "coarse_context": "none",
+        "fine_context": "mspki",
+        "spsa_partial_ratio": 0.5,
+        "spsa_qk_channels": 32,
+        "spsa_ffn_ratio": 2.0,
+        "mspki_neighbor_scales": [
+            8
+        ],
+        "mspki_branch_channels": 16,
+        "mspki_ffn_ratio": 2.0,
+        "mspki_fusion": "learned",
+        "layer_scale_init": 0.1
+    },
+    "preprocess": {
+        "backend": "torch_gpu",
+        "query_chunk_size": 1024,
+        "support_chunk_size": 4096,
+        "require_cuda": true
+    },
+    "model": {
+        "ground_truth_matching_radius": 0.05,
+        "num_points_in_patch": 64,
+        "estimate_transform_during_training": true
+    },
+    "coarse_matching": {
+        "num_targets": 128,
+        "overlap_threshold": 0.1,
+        "num_correspondences": 256,
+        "dual_normalization": true
+    },
+    "geotransformer": {
+        "input_dim": 768,
+        "hidden_dim": 192,
+        "output_dim": 192,
+        "num_heads": 4,
+        "blocks": [
+            "self",
+            "cross",
+            "self",
+            "cross",
+            "self",
+            "cross"
+        ],
+        "sigma_d": 0.1,
+        "sigma_a": 15,
+        "angle_k": 3,
+        "reduction_a": "max"
+    },
+    "fine_matching": {
+        "topk": 3,
+        "acceptance_radius": 0.1,
+        "confidence_threshold": 0.005,
+        "num_hypotheses": 2000,
+        "num_refinement_steps": 5,
+        "re_feature_source": "official"
+    },
+    "coarse_loss": {
+        "positive_margin": 0.1,
+        "negative_margin": 1.4,
+        "positive_optimal": 0.1,
+        "negative_optimal": 1.4,
+        "log_scale": 24,
+        "positive_overlap": 0.1
+    },
+    "fine_loss": {
+        "positive_radius": 0.05,
+        "negative_radius": 0.2,
+        "positive_margin": 0.1,
+        "negative_margin": 1.4
+    },
+    "loss": {
+        "weight_coarse_loss": 1.0,
+        "weight_fine_ri_loss": 1.0,
+        "weight_fine_re_loss": 1.0
+    },
+    "paper": {
+        "spsa_ratios": [
+            0.25,
+            0.5,
+            0.75
+        ],
+        "mspki_support_sets": [
+            [
+                8,
+                16
+            ],
+            [
+                8,
+                16,
+                24
+            ],
+            [
+                8,
+                16,
+                32
+            ]
+        ],
+        "layer_scale_inits": [
+            0.01,
+            0.1,
+            1.0
+        ],
+        "density_keep_ratios": [
+            1.0,
+            0.75,
+            0.5,
+            0.25
+        ],
+        "noise_stds": [
+            0.0,
+            0.0025,
+            0.005,
+            0.01
+        ],
+        "combined_perturbations": [
+            [
+                0.5,
+                0.005
+            ],
+            [
+                0.25,
+                0.01
+            ]
+        ],
+        "fhp_hypothesis_budgets": [
+            100,
+            250,
+            500,
+            1000,
+            2000
+        ],
+        "ransac_corr_budgets": [
+            50,
+            100,
+            250,
+            500,
+            null
+        ],
+        "overlap_bins": [
+            [
+                0.1,
+                0.2
+            ],
+            [
+                0.2,
+                0.3
+            ],
+            [
+                0.3,
+                0.5
+            ],
+            [
+                0.5,
+                Infinity
+            ]
+        ],
+        "equivariance_num_pairs": 12,
+        "equivariance_rotations_per_pair": 2,
+        "equivariance_precisions": [
+            "float32",
+            "float64"
+        ]
+    },
+    "transfer": {
+        "whu_tls_root": null,
+        "kitti_root": null,
+        "whu_rre_threshold": null,
+        "whu_rte_threshold": null,
+        "kitti_rre_threshold": null,
+        "kitti_rte_threshold": null
+    },
+    "output_root": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8",
+    "run_name": "mspki/re_official/seed_7351/ms8",
+    "exp_name": "mspki/re_official/seed_7351/ms8",
+    "output_dir": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8",
+    "snapshot_dir": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/snapshots",
+    "log_dir": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/logs",
+    "event_dir": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/wandb_events",
+    "feature_dir": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/features",
+    "registration_dir": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/registration"
+}
+[2026-09-22 21:21:34] [INFO] Feature manifest: {
+  "code_version": "mspki-official-protocol-v1",
+  "checkpoint_code_version": "mspki-official-protocol-v1",
+  "variant": "mspki",
+  "canonical_variant": "mspki",
+  "seed": 7351,
+  "re_feature_source": "official",
+  "coarse_context": "none",
+  "fine_context": "mspki",
+  "spsa_ratio": 0.5,
+  "mspki_scales": [
+    8
+  ],
+  "mspki_fusion": "learned",
+  "layer_scale_init": 0.1,
+  "num_hypotheses": 2000,
+  "benchmark": "3DMatch",
+  "benchmark_tag": "3DMatch",
+  "rotation_mode": "none",
+  "rotation_seed": 7351,
+  "snapshot": "/home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/snapshots/best.pth.tar",
+  "snapshot_sha256": "c60d9080c5b048c166584a4979cd20243f6107e00deea6c0beb46c8d38128a42",
+  "parameters": 3893196,
+  "created_at": "2026-09-22 21:14:31",
+  "expected_pairs": 1623,
+  "saved_pairs": 1623,
+  "completed": true,
+  "completed_at": "2026-09-22 21:20:36"
+}
+[2026-09-22 21:21:38] [INFO] Kitchen: PIR=0.869, FMR=1.000, IR=0.746, RR=0.996, failures=0, mean_RRE=1.806, mean_RTE=0.045
+[2026-09-22 21:21:39] [INFO] Home_1: PIR=0.848, FMR=0.987, IR=0.744, RR=0.972, failures=0, mean_RRE=1.694, mean_RTE=0.061
+[2026-09-22 21:21:40] [INFO] Home_2: PIR=0.697, FMR=0.966, IR=0.621, RR=0.805, failures=0, mean_RRE=2.113, mean_RTE=0.075
+[2026-09-22 21:21:42] [INFO] Hotel_1: PIR=0.904, FMR=0.996, IR=0.780, RR=0.995, failures=0, mean_RRE=1.681, mean_RTE=0.061
+[2026-09-22 21:21:42] [INFO] Hotel_2: PIR=0.864, FMR=1.000, IR=0.755, RR=0.962, failures=0, mean_RRE=1.595, mean_RTE=0.060
+[2026-09-22 21:21:43] [INFO] Hotel_3: PIR=0.869, FMR=1.000, IR=0.751, RR=0.923, failures=0, mean_RRE=1.726, mean_RTE=0.053
+[2026-09-22 21:21:45] [INFO] Study: PIR=0.819, FMR=0.959, IR=0.722, RR=0.915, failures=0, mean_RRE=2.213, mean_RTE=0.081
+[2026-09-22 21:21:45] [INFO] MIT_Lab: PIR=0.799, FMR=1.000, IR=0.709, RR=0.956, failures=0, mean_RRE=2.151, mean_RTE=0.076
+[2026-09-22 21:21:45] [CRIT] Overall: PIR=0.834, FMR=0.989, IR=0.729, OV=0.948, RR=0.940, mean_RRE=1.872, mean_RTE=0.064, median_RRE=1.654, median_RTE=0.051
+[2026-09-22 21:21:45] [CRIT] Summary saved to /home/zouzichao/PARENet/output/3DMatch_mechanism_ablation_N8/mspki/re_official/seed_7351/ms8/registration/3DMatch/summary_fhp.json

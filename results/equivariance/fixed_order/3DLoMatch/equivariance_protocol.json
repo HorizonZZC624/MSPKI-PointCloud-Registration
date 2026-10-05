@@ -1,0 +1,15 @@
+{
+  "benchmark": "3DLoMatch",
+  "variants": [
+    "mspki"
+  ],
+  "dtypes": [
+    "float64"
+  ],
+  "model_seed": 7351,
+  "rotation_seed": 7351,
+  "num_pairs": 24,
+  "num_rotations": 4,
+  "hierarchy_policy": "Hierarchy and neighbor indices are computed once and frozen; the same SO(3) rotation is applied to all coordinate levels.",
+  "checkpoint_root": "/home/zouzichao/PARENet/output/3DMatch_ablation_new"
+}

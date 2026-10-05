@@ -1,0 +1,50 @@
+[
+  {
+    "figure": "qualitative_main",
+    "row": "indoor_rescue",
+    "variant": "baseline",
+    "ir_pct": 1.7500000000000002,
+    "rre_deg": 178.24855041503906,
+    "rte_m": 2.892580986022949,
+    "success": false,
+    "npz_sha256": "9037b091d42460a424db2cfe077d2b222edad321602937b9d8fb142e9616d97a",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\indoor\\candidate_npz\\sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__baseline.npz",
+    "packaged_npz": "qualitative_examples/sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__baseline.npz"
+  },
+  {
+    "figure": "qualitative_main",
+    "row": "indoor_rescue",
+    "variant": "mspki",
+    "ir_pct": 54.2,
+    "rre_deg": 2.1046841144561768,
+    "rte_m": 0.04424929991364479,
+    "success": true,
+    "npz_sha256": "f140b154acc049a32c8d9635946a3065f9de0cc6b49ab14b67d7cc9878416db2",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\indoor\\candidate_npz\\sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__mspki.npz",
+    "packaged_npz": "qualitative_examples/sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__mspki.npz"
+  },
+  {
+    "figure": "qualitative_main",
+    "row": "kitti_rescue",
+    "variant": "baseline",
+    "ir_pct": 1.2000000104308128,
+    "rre_deg": 174.99459838867188,
+    "rte_m": 18.87615203857422,
+    "success": false,
+    "npz_sha256": "3c4d3920a2ae8bc47004ce7456c33039126dac0bf7d96a532949ae5d661e8e0e",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\fig5_refresh_20260927\\latest_pair\\seq09_ref40_src25_baseline.npz",
+    "packaged_npz": "qualitative_examples/seq09_ref40_src25_baseline.npz"
+  },
+  {
+    "figure": "qualitative_main",
+    "row": "kitti_rescue",
+    "variant": "mspki",
+    "ir_pct": 68.30000281333923,
+    "rre_deg": 0.1724584996700287,
+    "rte_m": 0.05681260675191879,
+    "success": true,
+    "npz_sha256": "bd3996973672790e3966254125a075e41559f17a0ff7b465de0c227d7976d28d",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\fig5_refresh_20260927\\latest_pair\\seq09_ref40_src25_mspki.npz",
+    "packaged_npz": "qualitative_examples/seq09_ref40_src25_mspki.npz"
+  }
+]

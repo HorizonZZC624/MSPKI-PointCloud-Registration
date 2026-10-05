@@ -1,0 +1,3 @@
+method,parameters,process_repeats,warmup_pairs,timed_pairs_per_run,latency_mean_ms,latency_sample_sd_ms,peak_allocated_max_mib
+baseline,2078128,5,20,100,115.3872998765437,2.9965424028126235,4483.05126953125
+mspki,2089678,5,20,100,136.27764877222944,10.465908118391281,4482.17724609375

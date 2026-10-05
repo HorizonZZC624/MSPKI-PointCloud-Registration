@@ -1,0 +1,5 @@
+benchmark,model,parameters,latency_mean_ms,latency_sd_ms,peak_allocated_max_mib,peak_reserved_max_mib
+3DMatch,baseline,3839984,118.368594,4.271821,2284.491211,7840.0
+3DMatch,mspki,3904590,131.122441,1.384462,2284.493164,7810.0
+3DLoMatch,baseline,3839984,114.835152,1.566928,2236.37207,12238.0
+3DLoMatch,mspki,3904590,120.643965,3.921648,2237.458496,12218.0

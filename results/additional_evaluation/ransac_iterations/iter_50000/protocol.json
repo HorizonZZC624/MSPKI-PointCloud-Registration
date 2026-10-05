@@ -1,0 +1,74 @@
+{
+  "pairs_per_run": 555,
+  "training_seeds": [
+    2026,
+    3407,
+    7351
+  ],
+  "estimator_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgets": [
+    50
+  ],
+  "cache_tag": "density_src_r100_m9017",
+  "pose_evaluations": 16650,
+  "RANSAC_distance_m": 0.3,
+  "RANSAC_minimal_points": 4,
+  "iterations": 50000,
+  "confidence": 0.999,
+  "IR_radius_m": 1.0,
+  "TR_RRE_strict_deg": 5.0,
+  "TR_RTE_strict_m": 2.0,
+  "score_ties": "stable input order",
+  "random_seed_policy": "reset before each pair",
+  "training_seed_aggregation": "average estimator repeats within each training seed, then sample SD over training seeds",
+  "complete_test_set": true,
+  "open3d_version": "0.18.0",
+  "numpy_version": "1.26.4",
+  "OMP_NUM_THREADS": 1,
+  "inputs": [
+    {
+      "method": "baseline",
+      "training_seed": 2026,
+      "folder": "/home/zouzichao/PARENet/output/KITTI_mspki/baseline/re_official/seed_2026/density_src_r100_m9017/features",
+      "snapshot_sha256": "755dcfbe1c6c4dc7b9bb36b2a56764aaf7eae0f01ca73e1830c378032f78aca5"
+    },
+    {
+      "method": "baseline",
+      "training_seed": 3407,
+      "folder": "/home/zouzichao/PARENet/output/KITTI_mspki/baseline/re_official/seed_3407/density_src_r100_m9017/features",
+      "snapshot_sha256": "179a58eded0756767da1beb42de81c7b93d78c2ad8657fd8aeffa261f5495661"
+    },
+    {
+      "method": "baseline",
+      "training_seed": 7351,
+      "folder": "/home/zouzichao/PARENet/output/KITTI_mspki/baseline/re_official/seed_7351/density_src_r100_m9017/features",
+      "snapshot_sha256": "cefda7e8b3619b3b663b935852c7fb635134274f997cccce396ba88234d4ff3b"
+    },
+    {
+      "method": "mspki",
+      "training_seed": 2026,
+      "folder": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_2026/density_src_r100_m9017/features",
+      "snapshot_sha256": "81f1d7bcb8b7c3598ec3c023885e005fa8e11864d00aaee9a73408dd765deb19"
+    },
+    {
+      "method": "mspki",
+      "training_seed": 3407,
+      "folder": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_3407/density_src_r100_m9017/features",
+      "snapshot_sha256": "8fb5c863f3ddbfae21626a83e3f0eb21efc922f3eaf7d489688d44350198fbfc"
+    },
+    {
+      "method": "mspki",
+      "training_seed": 7351,
+      "folder": "/home/zouzichao/PARENet/output/KITTI_mspki/mspki/re_official/seed_7351/density_src_r100_m9017/features",
+      "snapshot_sha256": "6f7e98e4ccfc18fae4d41e5e28d6294d89426afa37a5386241b6415342e1e839"
+    }
+  ],
+  "entry_script_sha256": "77678f5ff5566f1b116eb94a1162e6171b163f3557d79ca64707cc7020a5e00c",
+  "completed": true
+}

@@ -1,0 +1,30 @@
+{
+  "benchmark": "3DLoMatch",
+  "dtype": "float64",
+  "stage": 1,
+  "num_pairs": 24,
+  "num_rotations": 4,
+  "rotation_seed": 7351,
+  "scales": [
+    8,
+    16,
+    32
+  ],
+  "rows": 212364,
+  "incoming_exact_non_decreasing_fraction": 0.9513241415682507,
+  "precomputed_prefix_matches_resorted_fraction": {
+    "8": 0.9985826222900304,
+    "16": 0.9985826222900304,
+    "32": 0.9984837354730557
+  },
+  "rotation_prefix_unchanged_fraction": {
+    "8": 0.9998481381025033,
+    "16": 0.999863442014654,
+    "32": 0.9999376071273851
+  },
+  "boundary_gap_zero_or_tiny_fraction": {
+    "8": 0.0003154960351095289,
+    "16": 0.0002966604509238854,
+    "32": 0.00013184908929950463
+  }
+}

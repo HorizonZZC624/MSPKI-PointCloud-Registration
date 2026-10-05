@@ -1,0 +1,174 @@
+{
+  "3DMatch": {
+    "baseline": {
+      "parameters": 3839984,
+      "trainable_parameters": 3839984,
+      "process_repeats": 5,
+      "latency_mean_of_run_means_ms": 118.36859439825639,
+      "latency_sd_of_run_means_ms": 4.271820643367422,
+      "latency_run_means_ms": [
+        116.53128476813436,
+        123.05344343418255,
+        118.73177102068439,
+        112.15975708561018,
+        121.36671568267047
+      ],
+      "median_mean_across_runs_ms": 117.64290598221123,
+      "p95_mean_across_runs_ms": 144.5990419201553,
+      "peak_allocated_max_mib": 2284.4912109375,
+      "peak_allocated_run_values_mib": [
+        2281.81396484375,
+        2284.4912109375,
+        2282.11865234375,
+        2282.9140625,
+        2282.29931640625
+      ],
+      "peak_reserved_max_mib": 7840.0,
+      "environment": {
+        "profile_protocol_version": "paper-inference-only-v2",
+        "gpu_name": "NVIDIA GeForce RTX 4090 D",
+        "gpu_total_memory_gib": 23.64288330078125,
+        "compute_capability": "8.9",
+        "cuda_device_order": "PCI_BUS_ID",
+        "cuda_visible_devices": "1",
+        "python_version": "3.9.20",
+        "pytorch_version": "2.1.2+cu121",
+        "cuda_runtime_version": "12.1",
+        "cudnn_version": 8902,
+        "nvidia_driver_version": "550.144.03",
+        "git_commit": null
+      }
+    },
+    "mspki": {
+      "parameters": 3904590,
+      "trainable_parameters": 3904590,
+      "process_repeats": 5,
+      "latency_mean_of_run_means_ms": 131.1224411916919,
+      "latency_sd_of_run_means_ms": 1.384461614445726,
+      "latency_run_means_ms": [
+        129.07425690675154,
+        132.90085940854624,
+        131.18794169044122,
+        130.8477762178518,
+        131.60137173486874
+      ],
+      "median_mean_across_runs_ms": 129.63238230440766,
+      "p95_mean_across_runs_ms": 159.5743254199624,
+      "peak_allocated_max_mib": 2284.4931640625,
+      "peak_allocated_run_values_mib": [
+        2284.4931640625,
+        2282.20068359375,
+        2281.63818359375,
+        2281.4560546875,
+        2281.50244140625
+      ],
+      "peak_reserved_max_mib": 7810.0,
+      "environment": {
+        "profile_protocol_version": "paper-inference-only-v2",
+        "gpu_name": "NVIDIA GeForce RTX 4090 D",
+        "gpu_total_memory_gib": 23.64288330078125,
+        "compute_capability": "8.9",
+        "cuda_device_order": "PCI_BUS_ID",
+        "cuda_visible_devices": "1",
+        "python_version": "3.9.20",
+        "pytorch_version": "2.1.2+cu121",
+        "cuda_runtime_version": "12.1",
+        "cudnn_version": 8902,
+        "nvidia_driver_version": "550.144.03",
+        "git_commit": null
+      }
+    }
+  },
+  "3DLoMatch": {
+    "baseline": {
+      "parameters": 3839984,
+      "trainable_parameters": 3839984,
+      "process_repeats": 5,
+      "latency_mean_of_run_means_ms": 114.83515212219208,
+      "latency_sd_of_run_means_ms": 1.5669275366116584,
+      "latency_run_means_ms": [
+        114.88916245056316,
+        113.92786539392546,
+        117.52973271068186,
+        114.05413561034948,
+        113.77486444544047
+      ],
+      "median_mean_across_runs_ms": 112.65559578314424,
+      "p95_mean_across_runs_ms": 143.13065320719033,
+      "peak_allocated_max_mib": 2236.3720703125,
+      "peak_allocated_run_values_mib": [
+        2234.9892578125,
+        2235.19677734375,
+        2235.33642578125,
+        2236.3720703125,
+        2235.81787109375
+      ],
+      "peak_reserved_max_mib": 12238.0,
+      "environment": {
+        "profile_protocol_version": "paper-inference-only-v2",
+        "gpu_name": "NVIDIA GeForce RTX 4090 D",
+        "gpu_total_memory_gib": 23.64288330078125,
+        "compute_capability": "8.9",
+        "cuda_device_order": "PCI_BUS_ID",
+        "cuda_visible_devices": "1",
+        "python_version": "3.9.20",
+        "pytorch_version": "2.1.2+cu121",
+        "cuda_runtime_version": "12.1",
+        "cudnn_version": 8902,
+        "nvidia_driver_version": "550.144.03",
+        "git_commit": null
+      }
+    },
+    "mspki": {
+      "parameters": 3904590,
+      "trainable_parameters": 3904590,
+      "process_repeats": 5,
+      "latency_mean_of_run_means_ms": 120.64396519912407,
+      "latency_sd_of_run_means_ms": 3.9216476503207796,
+      "latency_run_means_ms": [
+        120.00958424760029,
+        121.7747410130687,
+        125.98587922751904,
+        120.39475618395954,
+        115.05486532347277
+      ],
+      "median_mean_across_runs_ms": 120.00381059478968,
+      "p95_mean_across_runs_ms": 151.77384437760338,
+      "peak_allocated_max_mib": 2237.45849609375,
+      "peak_allocated_run_values_mib": [
+        2235.857421875,
+        2236.75,
+        2235.5126953125,
+        2237.45849609375,
+        2235.4111328125
+      ],
+      "peak_reserved_max_mib": 12218.0,
+      "environment": {
+        "profile_protocol_version": "paper-inference-only-v2",
+        "gpu_name": "NVIDIA GeForce RTX 4090 D",
+        "gpu_total_memory_gib": 23.64288330078125,
+        "compute_capability": "8.9",
+        "cuda_device_order": "PCI_BUS_ID",
+        "cuda_visible_devices": "1",
+        "python_version": "3.9.20",
+        "pytorch_version": "2.1.2+cu121",
+        "cuda_runtime_version": "12.1",
+        "cudnn_version": 8902,
+        "nvidia_driver_version": "550.144.03",
+        "git_commit": null
+      }
+    }
+  },
+  "relative_overhead": {
+    "3DMatch": {
+      "parameter_increase_pct": 1.682454926895538,
+      "latency_increase_pct": 10.774688048186686,
+      "peak_allocated_increase_pct": 8.549496670617884e-05
+    },
+    "3DLoMatch": {
+      "parameter_increase_pct": 1.682454926895538,
+      "latency_increase_pct": 5.058392808807377,
+      "peak_allocated_increase_pct": 0.04857983140069688
+    }
+  }
+}

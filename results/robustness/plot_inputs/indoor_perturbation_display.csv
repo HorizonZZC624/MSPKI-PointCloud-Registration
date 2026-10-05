@@ -1,0 +1,17 @@
+condition,level,model,IR_percent,RR_percent,source_summary,role
+density,100,baseline,40.92907205564491,74.89277585704033,indoor_three_seed/baseline/seed_7351/3DLoMatch/summary_fhp.json,nominal_reference
+density,100,mspki,45.830739866350356,77.76308083671253,indoor_three_seed/mspki/seed_7351/3DLoMatch/summary_fhp.json,nominal_reference
+density,75,baseline,40.44228109578478,76.77325973493451,robustness/density_r0.75/baseline/summary_fhp.json,perturbed_evaluation
+density,75,mspki,45.24569200538246,77.98850680446961,robustness/density_r0.75/mspki/summary_fhp.json,perturbed_evaluation
+density,50,baseline,38.620486453928656,74.97539117945612,robustness/density_r0.50/baseline/summary_fhp.json,perturbed_evaluation
+density,50,mspki,43.275282094512846,76.40763578304966,robustness/density_r0.50/mspki/summary_fhp.json,perturbed_evaluation
+density,25,baseline,31.130353611915286,68.37931688606159,robustness/density_r0.25/baseline/summary_fhp.json,perturbed_evaluation
+density,25,mspki,35.063547054033094,69.92570292218427,robustness/density_r0.25/mspki/summary_fhp.json,perturbed_evaluation
+noise,0,baseline,40.92907205564491,74.89277585704033,indoor_three_seed/baseline/seed_7351/3DLoMatch/summary_fhp.json,nominal_reference
+noise,0,mspki,45.830739866350356,77.76308083671253,indoor_three_seed/mspki/seed_7351/3DLoMatch/summary_fhp.json,nominal_reference
+noise,5,baseline,40.04806051829185,75.01632227598503,robustness/noise_s005/baseline/summary_fhp.json,perturbed_evaluation
+noise,5,mspki,45.01360176243347,76.84657545343184,robustness/noise_s005/mspki/summary_fhp.json,perturbed_evaluation
+noise,10,baseline,34.577818962861954,68.69077088404624,robustness/noise_s010/baseline/summary_fhp.json,perturbed_evaluation
+noise,10,mspki,38.58627697315817,69.46777242579432,robustness/noise_s010/mspki/summary_fhp.json,perturbed_evaluation
+noise,20,baseline,11.361143193040864,33.61798820918448,robustness/noise_s020/baseline/summary_fhp.json,perturbed_evaluation
+noise,20,mspki,11.834439083556367,30.300898769592422,robustness/noise_s020/mspki/summary_fhp.json,perturbed_evaluation

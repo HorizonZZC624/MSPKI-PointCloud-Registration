@@ -1,0 +1,35 @@
+{
+  "model": "GeoTransformer",
+  "checkpoint_status": "one released checkpoint, not three trained seeds",
+  "geo_root": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\third_party\\GeoTransformer",
+  "snapshot": "third_party\\GeoTransformer\\weights\\geotransformer-kitti.pth.tar",
+  "ratios": [
+    1.0,
+    0.5
+  ],
+  "mask_seed": 9017,
+  "inference_seed": 7351,
+  "mask_rule": "identical SHA256(mask_seed:original_sequence_id:source_frame) permutation prefix before hierarchy construction",
+  "IR_radius_m": 1.0,
+  "TR_RRE_strict_deg": 5.0,
+  "TR_RTE_strict_m": 2.0,
+  "pose_estimator": "official GeoTransformer LGR; PARE-Net/MSPKI archive uses FHP",
+  "comparison_scope": "system-level common-input evaluation; not a same-training-protocol module ablation",
+  "correspondence_IR": "native full set plus top1000 scores; always report correspondence counts",
+  "complete_test_set": true,
+  "missing_inputs": [],
+  "snapshot_sha256": "39cd6a01de6430c656eb8c9d67997f334f0a38c446dd8884b16a654e2b233237",
+  "metadata_sha256": "fd6ef51a8d7ce7da4d0b108ae5f748202a2c826be72c0aa22bb03cc7587c1fb1",
+  "neighbor_limits": [
+    64,
+    65,
+    74,
+    80,
+    79
+  ],
+  "torch_version": "2.1.2+cu121",
+  "numpy_version": "1.26.4",
+  "entry_script_sha256": "9503ca954da2740b98bc00ca9398560a6040416fef77ffca57e352d4cb077960",
+  "completed": true,
+  "geo_commit": "e7a135af4c318ff3b8d7f6c963df094d7e4ea540"
+}

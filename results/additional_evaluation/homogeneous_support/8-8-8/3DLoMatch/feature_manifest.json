@@ -1,0 +1,31 @@
+{
+  "code_version": "mspki-official-protocol-v1",
+  "checkpoint_code_version": "mspki-official-protocol-v1",
+  "variant": "mspki",
+  "canonical_variant": "mspki",
+  "seed": 7351,
+  "re_feature_source": "official",
+  "coarse_context": "none",
+  "fine_context": "mspki",
+  "spsa_ratio": 0.5,
+  "mspki_scales": [
+    8,
+    8,
+    8
+  ],
+  "mspki_fusion": "learned",
+  "layer_scale_init": 0.1,
+  "num_hypotheses": 2000,
+  "benchmark": "3DLoMatch",
+  "benchmark_tag": "3DLoMatch",
+  "rotation_mode": "none",
+  "rotation_seed": 7351,
+  "snapshot": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms8-8-8/snapshots/best.pth.tar",
+  "snapshot_sha256": "d9f1bcca9b94b5b8cdbb9fa684cfa3e308777e7ac858e4b24860431dece6074b",
+  "parameters": 3904590,
+  "created_at": "2026-10-02 14:59:11",
+  "expected_pairs": 1781,
+  "saved_pairs": 1781,
+  "completed": true,
+  "completed_at": "2026-10-02 15:04:25"
+}

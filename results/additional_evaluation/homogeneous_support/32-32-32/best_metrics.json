@@ -1,0 +1,23 @@
+{
+  "code_version": "mspki-official-protocol-v1",
+  "variant": "mspki",
+  "canonical_variant": "mspki",
+  "seed": 7351,
+  "re_feature_source": "official",
+  "mspki_scales": [
+    32,
+    32,
+    32
+  ],
+  "mspki_fusion": "learned",
+  "best_epoch": 35,
+  "validation": {
+    "PIR": 0.6402317336589031,
+    "IR": 0.6076961216163611,
+    "RRE": 8.370249461810854,
+    "RTE": 0.20838483713252298,
+    "RMSE": 0.13514176719740822,
+    "RR": 0.9113448534936138
+  },
+  "checkpoint": "/home/zouzichao/PARENet/output/3DMatch_homogeneous_ablation/mspki/re_official/seed_7351/ms32-32-32/snapshots/best.pth.tar"
+}

@@ -1,0 +1,677 @@
+[2026-10-03 20:57:08] [INFO] Command executed: experiments/KITTI_mspki/additional_evaluation/profile_kitti.py --variant baseline --seed 7351 --re_feature_source official --snapshot output/KITTI_mspki/baseline/re_official/seed_7351/snapshots/best.pth.tar --warmup_pairs 20 --profile_pairs 100 --density_keep_ratio 1.0 --num_workers 8 --output_root output/KITTI_additional/kitti_efficiency/runtime --profile_output output/KITTI_additional/kitti_efficiency/runs/baseline_run5.json
+[2026-10-03 20:57:08] [INFO] Configs:
+{
+    "code_version": "kitti-mspki-official-v2-fair",
+    "seed": 7351,
+    "variant": "baseline",
+    "canonical_variant": "baseline",
+    "working_dir": "/home/zouzichao/PARENet/experiments/KITTI_mspki",
+    "root_dir": "/home/zouzichao/PARENet",
+    "data": {
+        "dataset_root": "/home/zouzichao/PARENet/datasets/KITTI",
+        "metadata_root": "/home/zouzichao/PARENet/data/KITTI/metadata"
+    },
+    "train": {
+        "batch_size": 1,
+        "num_workers": 8,
+        "point_limit": 30000,
+        "use_augmentation": true,
+        "augmentation_noise": 0.01,
+        "augmentation_min_scale": 0.8,
+        "augmentation_max_scale": 1.1,
+        "augmentation_shift": 2.0,
+        "augmentation_rotation": 1.0,
+        "augmentation_crop": true,
+        "point_keep_ratio": 0.7,
+        "matching_radius": 0.6
+    },
+    "test": {
+        "batch_size": 1,
+        "num_workers": 8,
+        "point_limit": null
+    },
+    "eval": {
+        "acceptance_overlap": 0.0,
+        "acceptance_radius": 1.0,
+        "inlier_ratio_threshold": 0.05,
+        "rre_threshold": 5.0,
+        "rte_threshold": 2.0,
+        "feat_rre_threshold": 20.0
+    },
+    "ransac": {
+        "distance_threshold": 0.3,
+        "num_points": 4,
+        "num_iterations": 5000
+    },
+    "optim": {
+        "lr": 0.0001,
+        "lr_decay": 0.95,
+        "lr_decay_steps": 4,
+        "weight_decay": 1e-06,
+        "max_epoch": 100,
+        "grad_acc_steps": 1
+    },
+    "backbone": {
+        "num_stages": 4,
+        "num_neighbors": [
+            35,
+            35,
+            35,
+            35
+        ],
+        "init_voxel_size": 0.3,
+        "subsample_ratio": 2.5,
+        "kernel_size": 4,
+        "share_nonlinearity": false,
+        "conv_way": "edge_conv",
+        "use_xyz": true,
+        "init_dim": 96,
+        "output_dim": 64,
+        "coarse_context": "none",
+        "fine_context": "none",
+        "spsa_partial_ratio": 0.5,
+        "spsa_qk_channels": 32,
+        "spsa_ffn_ratio": 2.0,
+        "mspki_neighbor_scales": [
+            8,
+            16,
+            32
+        ],
+        "mspki_branch_channels": 16,
+        "mspki_ffn_ratio": 2.0,
+        "layer_scale_init": 0.1
+    },
+    "preprocess": {
+        "query_chunk_size": 1024,
+        "support_chunk_size": 4096,
+        "require_cuda": true
+    },
+    "model": {
+        "ground_truth_matching_radius": 0.6,
+        "num_points_in_patch": 128,
+        "estimate_transform_during_training": true
+    },
+    "coarse_matching": {
+        "num_targets": 128,
+        "overlap_threshold": 0.1,
+        "num_correspondences": 256,
+        "dual_normalization": true
+    },
+    "geotransformer": {
+        "input_dim": 768,
+        "hidden_dim": 96,
+        "output_dim": 128,
+        "num_heads": 4,
+        "blocks": [
+            "self",
+            "cross",
+            "self",
+            "cross",
+            "self",
+            "cross"
+        ],
+        "sigma_d": 4.8,
+        "sigma_a": 15,
+        "angle_k": 3,
+        "reduction_a": "max"
+    },
+    "fine_matching": {
+        "topk": 2,
+        "acceptance_radius": 0.6,
+        "confidence_threshold": 0.005,
+        "num_hypotheses": 1000,
+        "num_refinement_steps": 5,
+        "re_feature_source": "official"
+    },
+    "coarse_loss": {
+        "positive_margin": 0.1,
+        "negative_margin": 1.4,
+        "positive_optimal": 0.1,
+        "negative_optimal": 1.4,
+        "log_scale": 40,
+        "positive_overlap": 0.1
+    },
+    "fine_loss": {
+        "positive_radius": 0.6,
+        "negative_radius": 1.2,
+        "positive_margin": 0.1,
+        "negative_margin": 1.4
+    },
+    "loss": {
+        "weight_coarse_loss": 1.0,
+        "weight_fine_ri_loss": 1.0,
+        "weight_fine_re_loss": 1.0
+    },
+    "output_root": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime",
+    "run_name": "baseline/re_official/seed_7351",
+    "output_dir": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime/baseline/re_official/seed_7351",
+    "snapshot_dir": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime/baseline/re_official/seed_7351/snapshots",
+    "log_dir": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime/baseline/re_official/seed_7351/logs",
+    "event_dir": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime/baseline/re_official/seed_7351/wandb_events",
+    "feature_dir": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime/baseline/re_official/seed_7351/features",
+    "registration_dir": "/home/zouzichao/PARENet/output/KITTI_additional/kitti_efficiency/runtime/baseline/re_official/seed_7351/registration"
+}
+[2026-10-03 20:57:08] [INFO] KNN limits: [35, 35, 35, 35].
+[2026-10-03 20:57:08] [INFO] Model description:
+PARE_Net(
+  (backbone): PAREConvFPN(
+    (encoder2_1): PARE_Conv_Block(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=16, out_features=16, bias=False)
+      )
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=16, out_features=32, bias=False)
+        (map_to_dir): Linear(in_features=16, out_features=32, bias=False)
+      )
+    )
+    (encoder2_2): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (shortcut_proj): VNLinear(
+        (map_to_feat): Linear(in_features=32, out_features=64, bias=False)
+      )
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=32, out_features=64, bias=False)
+        (map_to_dir): Linear(in_features=32, out_features=64, bias=False)
+      )
+    )
+    (encoder2_3): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (shortcut_proj): Identity()
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=32, out_features=64, bias=False)
+        (map_to_dir): Linear(in_features=32, out_features=64, bias=False)
+      )
+    )
+    (encoder3_1): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=64, out_features=64, bias=False)
+      )
+      (shortcut_proj): VNLinear(
+        (map_to_feat): Linear(in_features=64, out_features=128, bias=False)
+      )
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=64, out_features=128, bias=False)
+        (map_to_dir): Linear(in_features=64, out_features=128, bias=False)
+      )
+    )
+    (encoder3_2): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=64, out_features=64, bias=False)
+      )
+      (shortcut_proj): Identity()
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=64, out_features=128, bias=False)
+        (map_to_dir): Linear(in_features=64, out_features=128, bias=False)
+      )
+    )
+    (encoder3_3): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=64, out_features=64, bias=False)
+      )
+      (shortcut_proj): Identity()
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=64, out_features=128, bias=False)
+        (map_to_dir): Linear(in_features=64, out_features=128, bias=False)
+      )
+    )
+    (encoder4_1): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (shortcut_proj): VNLinear(
+        (map_to_feat): Linear(in_features=128, out_features=256, bias=False)
+      )
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=128, out_features=256, bias=False)
+        (map_to_dir): Linear(in_features=128, out_features=256, bias=False)
+      )
+    )
+    (encoder4_2): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (shortcut_proj): Identity()
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=128, out_features=256, bias=False)
+        (map_to_dir): Linear(in_features=128, out_features=256, bias=False)
+      )
+    )
+    (encoder4_3): PARE_Conv_Resblock(
+      (score_net): CorrelationNet(
+        (vn_layer): VNLinearLeakyReLU(
+          (map_to_feat): Linear(in_features=3, out_features=8, bias=False)
+          (map_to_dir): Linear(in_features=3, out_features=8, bias=False)
+        )
+        (mlp_convs_hidden): ModuleList(
+          (0): Conv1d(8, 4, kernel_size=(1,), stride=(1,), bias=False)
+          (1): Conv1d(4, 4, kernel_size=(1,), stride=(1,))
+        )
+        (mlp_bns_hidden): ModuleList(
+          (0): BatchNorm1d(4, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (relu): VNLeakyReLU(
+        (map_to_dir): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (shortcut_proj): Identity()
+      (unary): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=128, out_features=256, bias=False)
+        (map_to_dir): Linear(in_features=128, out_features=256, bias=False)
+      )
+    )
+    (coarse_RI_head): VNLinear(
+      (map_to_feat): Linear(in_features=256, out_features=256, bias=False)
+    )
+    (coarse_std_feature): VNStdFeature(
+      (vn1): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=256, out_features=128, bias=False)
+        (map_to_dir): Linear(in_features=256, out_features=128, bias=False)
+      )
+      (vn2): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=128, out_features=64, bias=False)
+        (map_to_dir): Linear(in_features=128, out_features=64, bias=False)
+      )
+      (vn_lin): Linear(in_features=64, out_features=2, bias=False)
+    )
+    (decoder3): VNLinearLeakyReLU(
+      (map_to_feat): Linear(in_features=384, out_features=128, bias=False)
+      (map_to_dir): Linear(in_features=384, out_features=128, bias=False)
+    )
+    (decoder2): VNLinearLeakyReLU(
+      (map_to_feat): Linear(in_features=192, out_features=21, bias=False)
+      (map_to_dir): Linear(in_features=192, out_features=21, bias=False)
+    )
+    (RI_head): VNLinear(
+      (map_to_feat): Linear(in_features=21, out_features=21, bias=False)
+    )
+    (RE_head): VNLinear(
+      (map_to_feat): Linear(in_features=21, out_features=21, bias=False)
+    )
+    (fine_std_feature): VNStdFeature(
+      (vn1): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=21, out_features=10, bias=False)
+        (map_to_dir): Linear(in_features=21, out_features=10, bias=False)
+      )
+      (vn2): VNLinearLeakyReLU(
+        (map_to_feat): Linear(in_features=10, out_features=5, bias=False)
+        (map_to_dir): Linear(in_features=10, out_features=5, bias=False)
+      )
+      (vn_lin): Linear(in_features=5, out_features=2, bias=False)
+    )
+    (matching_score_proj): Linear(in_features=63, out_features=1, bias=True)
+  )
+  (transformer): GeometricTransformer(
+    (embedding): GeometricStructureEmbedding(
+      (embedding): SinusoidalPositionalEmbedding()
+      (proj_d): Linear(in_features=96, out_features=96, bias=True)
+      (proj_a): Linear(in_features=96, out_features=96, bias=True)
+    )
+    (in_proj): Linear(in_features=768, out_features=96, bias=True)
+    (transformer): RPEConditionalTransformer(
+      (layers): ModuleList(
+        (0): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=96, out_features=96, bias=True)
+              (proj_q1): Linear(in_features=96, out_features=96, bias=True)
+              (proj_k): Linear(in_features=96, out_features=96, bias=True)
+              (proj_v): Linear(in_features=96, out_features=96, bias=True)
+              (proj_p): Linear(in_features=96, out_features=96, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=96, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=96, out_features=192, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=192, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (1): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=96, out_features=96, bias=True)
+              (proj_k): Linear(in_features=96, out_features=96, bias=True)
+              (proj_v): Linear(in_features=96, out_features=96, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=96, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=96, out_features=192, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=192, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (2): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=96, out_features=96, bias=True)
+              (proj_q1): Linear(in_features=96, out_features=96, bias=True)
+              (proj_k): Linear(in_features=96, out_features=96, bias=True)
+              (proj_v): Linear(in_features=96, out_features=96, bias=True)
+              (proj_p): Linear(in_features=96, out_features=96, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=96, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=96, out_features=192, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=192, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (3): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=96, out_features=96, bias=True)
+              (proj_k): Linear(in_features=96, out_features=96, bias=True)
+              (proj_v): Linear(in_features=96, out_features=96, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=96, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=96, out_features=192, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=192, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (4): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=96, out_features=96, bias=True)
+              (proj_q1): Linear(in_features=96, out_features=96, bias=True)
+              (proj_k): Linear(in_features=96, out_features=96, bias=True)
+              (proj_v): Linear(in_features=96, out_features=96, bias=True)
+              (proj_p): Linear(in_features=96, out_features=96, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=96, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=96, out_features=192, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=192, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (5): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=96, out_features=96, bias=True)
+              (proj_k): Linear(in_features=96, out_features=96, bias=True)
+              (proj_v): Linear(in_features=96, out_features=96, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=96, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=96, out_features=192, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=192, out_features=96, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+      )
+    )
+    (out_proj): Linear(in_features=96, out_features=128, bias=True)
+  )
+  (coarse_target): SuperPointTargetGenerator()
+  (coarse_matching): SuperPointMatching()
+  (fine_matching): HypothesisProposer(
+    (procrustes): WeightedProcrustes()
+  )
+  (point_matching): PointDualMatching
+)
+[2026-10-03 20:57:08] [INFO] Loading from "/home/zouzichao/PARENet/output/KITTI_mspki/baseline/re_official/seed_7351/snapshots/best.pth.tar".
+[2026-10-03 20:57:08] [INFO] Model has been loaded.
+[2026-10-03 20:57:09] [CRIT] profile_pair=1/120, phase=warmup, time: 0.124s/1.305s
+[2026-10-03 20:57:09] [CRIT] profile_pair=2/120, phase=warmup, time: 0.063s/0.792s
+[2026-10-03 20:57:10] [CRIT] profile_pair=3/120, phase=warmup, time: 0.042s/0.619s
+[2026-10-03 20:57:10] [CRIT] profile_pair=4/120, phase=warmup, time: 0.032s/0.534s
+[2026-10-03 20:57:10] [CRIT] profile_pair=5/120, phase=warmup, time: 0.026s/0.487s
+[2026-10-03 20:57:11] [CRIT] profile_pair=6/120, phase=warmup, time: 0.022s/0.452s
+[2026-10-03 20:57:11] [CRIT] profile_pair=7/120, phase=warmup, time: 0.019s/0.423s
+[2026-10-03 20:57:11] [CRIT] profile_pair=8/120, phase=warmup, time: 0.017s/0.400s
+[2026-10-03 20:57:11] [CRIT] profile_pair=9/120, phase=warmup, time: 0.015s/0.378s
+[2026-10-03 20:57:12] [CRIT] profile_pair=10/120, phase=warmup, time: 0.014s/0.360s
+[2026-10-03 20:57:12] [CRIT] profile_pair=11/120, phase=warmup, time: 0.012s/0.344s
+[2026-10-03 20:57:12] [CRIT] profile_pair=12/120, phase=warmup, time: 0.011s/0.330s
+[2026-10-03 20:57:12] [CRIT] profile_pair=13/120, phase=warmup, time: 0.011s/0.316s
+[2026-10-03 20:57:12] [CRIT] profile_pair=14/120, phase=warmup, time: 0.010s/0.304s
+[2026-10-03 20:57:12] [CRIT] profile_pair=15/120, phase=warmup, time: 0.009s/0.295s
+[2026-10-03 20:57:13] [CRIT] profile_pair=16/120, phase=warmup, time: 0.009s/0.287s
+[2026-10-03 20:57:13] [CRIT] profile_pair=17/120, phase=warmup, time: 0.008s/0.281s
+[2026-10-03 20:57:13] [CRIT] profile_pair=18/120, phase=warmup, time: 0.008s/0.276s
+[2026-10-03 20:57:13] [CRIT] profile_pair=19/120, phase=warmup, time: 0.007s/0.271s
+[2026-10-03 20:57:13] [CRIT] profile_pair=20/120, phase=warmup, time: 0.007s/0.267s
+[2026-10-03 20:57:13] [CRIT] profile_pair=21/120, phase=timed, time: 0.007s/0.264s
+[2026-10-03 20:57:14] [CRIT] profile_pair=22/120, phase=timed, time: 0.006s/0.261s
+[2026-10-03 20:57:14] [CRIT] profile_pair=23/120, phase=timed, time: 0.006s/0.256s
+[2026-10-03 20:57:14] [CRIT] profile_pair=24/120, phase=timed, time: 0.006s/0.252s
+[2026-10-03 20:57:14] [CRIT] profile_pair=25/120, phase=timed, time: 0.006s/0.247s
+[2026-10-03 20:57:14] [CRIT] profile_pair=26/120, phase=timed, time: 0.006s/0.244s
+[2026-10-03 20:57:14] [CRIT] profile_pair=27/120, phase=timed, time: 0.005s/0.241s
+[2026-10-03 20:57:15] [CRIT] profile_pair=28/120, phase=timed, time: 0.005s/0.239s
+[2026-10-03 20:57:15] [CRIT] profile_pair=29/120, phase=timed, time: 0.005s/0.237s
+[2026-10-03 20:57:15] [CRIT] profile_pair=30/120, phase=timed, time: 0.005s/0.235s
+[2026-10-03 20:57:15] [CRIT] profile_pair=31/120, phase=timed, time: 0.005s/0.234s
+[2026-10-03 20:57:15] [CRIT] profile_pair=32/120, phase=timed, time: 0.005s/0.232s
+[2026-10-03 20:57:16] [CRIT] profile_pair=33/120, phase=timed, time: 0.005s/0.230s
+[2026-10-03 20:57:16] [CRIT] profile_pair=34/120, phase=timed, time: 0.004s/0.228s
+[2026-10-03 20:57:16] [CRIT] profile_pair=35/120, phase=timed, time: 0.004s/0.225s
+[2026-10-03 20:57:16] [CRIT] profile_pair=36/120, phase=timed, time: 0.004s/0.223s
+[2026-10-03 20:57:16] [CRIT] profile_pair=37/120, phase=timed, time: 0.004s/0.222s
+[2026-10-03 20:57:16] [CRIT] profile_pair=38/120, phase=timed, time: 0.004s/0.221s
+[2026-10-03 20:57:17] [CRIT] profile_pair=39/120, phase=timed, time: 0.004s/0.220s
+[2026-10-03 20:57:17] [CRIT] profile_pair=40/120, phase=timed, time: 0.004s/0.218s
+[2026-10-03 20:57:17] [CRIT] profile_pair=41/120, phase=timed, time: 0.004s/0.216s
+[2026-10-03 20:57:17] [CRIT] profile_pair=42/120, phase=timed, time: 0.004s/0.213s
+[2026-10-03 20:57:17] [CRIT] profile_pair=43/120, phase=timed, time: 0.004s/0.211s
+[2026-10-03 20:57:17] [CRIT] profile_pair=44/120, phase=timed, time: 0.004s/0.209s
+[2026-10-03 20:57:17] [CRIT] profile_pair=45/120, phase=timed, time: 0.003s/0.207s
+[2026-10-03 20:57:17] [CRIT] profile_pair=46/120, phase=timed, time: 0.003s/0.205s
+[2026-10-03 20:57:17] [CRIT] profile_pair=47/120, phase=timed, time: 0.003s/0.202s
+[2026-10-03 20:57:18] [CRIT] profile_pair=48/120, phase=timed, time: 0.003s/0.199s
+[2026-10-03 20:57:18] [CRIT] profile_pair=49/120, phase=timed, time: 0.003s/0.197s
+[2026-10-03 20:57:18] [CRIT] profile_pair=50/120, phase=timed, time: 0.003s/0.194s
+[2026-10-03 20:57:18] [CRIT] profile_pair=51/120, phase=timed, time: 0.003s/0.192s
+[2026-10-03 20:57:18] [CRIT] profile_pair=52/120, phase=timed, time: 0.003s/0.190s
+[2026-10-03 20:57:18] [CRIT] profile_pair=53/120, phase=timed, time: 0.003s/0.188s
+[2026-10-03 20:57:18] [CRIT] profile_pair=54/120, phase=timed, time: 0.003s/0.185s
+[2026-10-03 20:57:18] [CRIT] profile_pair=55/120, phase=timed, time: 0.003s/0.183s
+[2026-10-03 20:57:18] [CRIT] profile_pair=56/120, phase=timed, time: 0.003s/0.181s
+[2026-10-03 20:57:18] [CRIT] profile_pair=57/120, phase=timed, time: 0.003s/0.179s
+[2026-10-03 20:57:18] [CRIT] profile_pair=58/120, phase=timed, time: 0.003s/0.178s
+[2026-10-03 20:57:18] [CRIT] profile_pair=59/120, phase=timed, time: 0.003s/0.176s
+[2026-10-03 20:57:18] [CRIT] profile_pair=60/120, phase=timed, time: 0.003s/0.175s
+[2026-10-03 20:57:19] [CRIT] profile_pair=61/120, phase=timed, time: 0.003s/0.174s
+[2026-10-03 20:57:19] [CRIT] profile_pair=62/120, phase=timed, time: 0.003s/0.173s
+[2026-10-03 20:57:19] [CRIT] profile_pair=63/120, phase=timed, time: 0.003s/0.172s
+[2026-10-03 20:57:19] [CRIT] profile_pair=64/120, phase=timed, time: 0.003s/0.170s
+[2026-10-03 20:57:19] [CRIT] profile_pair=65/120, phase=timed, time: 0.003s/0.170s
+[2026-10-03 20:57:19] [CRIT] profile_pair=66/120, phase=timed, time: 0.003s/0.169s
+[2026-10-03 20:57:19] [CRIT] profile_pair=67/120, phase=timed, time: 0.003s/0.168s
+[2026-10-03 20:57:19] [CRIT] profile_pair=68/120, phase=timed, time: 0.003s/0.167s
+[2026-10-03 20:57:19] [CRIT] profile_pair=69/120, phase=timed, time: 0.002s/0.166s
+[2026-10-03 20:57:19] [CRIT] profile_pair=70/120, phase=timed, time: 0.002s/0.164s
+[2026-10-03 20:57:20] [CRIT] profile_pair=71/120, phase=timed, time: 0.002s/0.163s
+[2026-10-03 20:57:20] [CRIT] profile_pair=72/120, phase=timed, time: 0.002s/0.162s
+[2026-10-03 20:57:20] [CRIT] profile_pair=73/120, phase=timed, time: 0.002s/0.161s
+[2026-10-03 20:57:20] [CRIT] profile_pair=74/120, phase=timed, time: 0.002s/0.159s
+[2026-10-03 20:57:20] [CRIT] profile_pair=75/120, phase=timed, time: 0.002s/0.158s
+[2026-10-03 20:57:20] [CRIT] profile_pair=76/120, phase=timed, time: 0.002s/0.157s
+[2026-10-03 20:57:20] [CRIT] profile_pair=77/120, phase=timed, time: 0.002s/0.156s
+[2026-10-03 20:57:20] [CRIT] profile_pair=78/120, phase=timed, time: 0.002s/0.155s
+[2026-10-03 20:57:20] [CRIT] profile_pair=79/120, phase=timed, time: 0.002s/0.154s
+[2026-10-03 20:57:20] [CRIT] profile_pair=80/120, phase=timed, time: 0.002s/0.153s
+[2026-10-03 20:57:20] [CRIT] profile_pair=81/120, phase=timed, time: 0.002s/0.152s
+[2026-10-03 20:57:20] [CRIT] profile_pair=82/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=83/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=84/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=85/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=86/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=87/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=88/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:21] [CRIT] profile_pair=89/120, phase=timed, time: 0.002s/0.151s
+[2026-10-03 20:57:22] [CRIT] profile_pair=90/120, phase=timed, time: 0.002s/0.150s
+[2026-10-03 20:57:22] [CRIT] profile_pair=91/120, phase=timed, time: 0.002s/0.150s
+[2026-10-03 20:57:22] [CRIT] profile_pair=92/120, phase=timed, time: 0.002s/0.149s
+[2026-10-03 20:57:22] [CRIT] profile_pair=93/120, phase=timed, time: 0.002s/0.148s
+[2026-10-03 20:57:22] [CRIT] profile_pair=94/120, phase=timed, time: 0.002s/0.148s
+[2026-10-03 20:57:22] [CRIT] profile_pair=95/120, phase=timed, time: 0.002s/0.147s
+[2026-10-03 20:57:22] [CRIT] profile_pair=96/120, phase=timed, time: 0.002s/0.147s
+[2026-10-03 20:57:22] [CRIT] profile_pair=97/120, phase=timed, time: 0.002s/0.146s
+[2026-10-03 20:57:22] [CRIT] profile_pair=98/120, phase=timed, time: 0.002s/0.145s
+[2026-10-03 20:57:22] [CRIT] profile_pair=99/120, phase=timed, time: 0.002s/0.145s
+[2026-10-03 20:57:22] [CRIT] profile_pair=100/120, phase=timed, time: 0.002s/0.144s
+[2026-10-03 20:57:22] [CRIT] profile_pair=101/120, phase=timed, time: 0.002s/0.144s
+[2026-10-03 20:57:23] [CRIT] profile_pair=102/120, phase=timed, time: 0.002s/0.143s
+[2026-10-03 20:57:23] [CRIT] profile_pair=103/120, phase=timed, time: 0.002s/0.142s
+[2026-10-03 20:57:23] [CRIT] profile_pair=104/120, phase=timed, time: 0.002s/0.142s
+[2026-10-03 20:57:23] [CRIT] profile_pair=105/120, phase=timed, time: 0.002s/0.142s
+[2026-10-03 20:57:23] [CRIT] profile_pair=106/120, phase=timed, time: 0.002s/0.142s
+[2026-10-03 20:57:23] [CRIT] profile_pair=107/120, phase=timed, time: 0.002s/0.141s
+[2026-10-03 20:57:23] [CRIT] profile_pair=108/120, phase=timed, time: 0.002s/0.141s
+[2026-10-03 20:57:23] [CRIT] profile_pair=109/120, phase=timed, time: 0.002s/0.141s
+[2026-10-03 20:57:23] [CRIT] profile_pair=110/120, phase=timed, time: 0.002s/0.140s
+[2026-10-03 20:57:23] [CRIT] profile_pair=111/120, phase=timed, time: 0.002s/0.140s
+[2026-10-03 20:57:24] [CRIT] profile_pair=112/120, phase=timed, time: 0.002s/0.140s
+[2026-10-03 20:57:24] [CRIT] profile_pair=113/120, phase=timed, time: 0.002s/0.139s
+[2026-10-03 20:57:24] [CRIT] profile_pair=114/120, phase=timed, time: 0.002s/0.139s
+[2026-10-03 20:57:24] [CRIT] profile_pair=115/120, phase=timed, time: 0.002s/0.139s
+[2026-10-03 20:57:24] [CRIT] profile_pair=116/120, phase=timed, time: 0.002s/0.139s
+[2026-10-03 20:57:24] [CRIT] profile_pair=117/120, phase=timed, time: 0.002s/0.138s
+[2026-10-03 20:57:24] [CRIT] profile_pair=118/120, phase=timed, time: 0.002s/0.138s
+[2026-10-03 20:57:24] [CRIT] profile_pair=119/120, phase=timed, time: 0.002s/0.138s

@@ -1,0 +1,98 @@
+[
+  {
+    "figure": "qualitative_supplementary",
+    "row": "indoor_rescue",
+    "variant": "baseline",
+    "ir_pct": 1.7500000000000002,
+    "rre_deg": 178.24855041503906,
+    "rte_m": 2.892580986022949,
+    "success": false,
+    "npz_sha256": "9037b091d42460a424db2cfe077d2b222edad321602937b9d8fb142e9616d97a",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\indoor\\candidate_npz\\sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__baseline.npz",
+    "packaged_npz": "qualitative_examples/sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__baseline.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "indoor_rescue",
+    "variant": "mspki",
+    "ir_pct": 54.2,
+    "rre_deg": 2.1046841144561768,
+    "rte_m": 0.04424929991364479,
+    "success": true,
+    "npz_sha256": "f140b154acc049a32c8d9635946a3065f9de0cc6b49ab14b67d7cc9878416db2",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\indoor\\candidate_npz\\sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__mspki.npz",
+    "packaged_npz": "qualitative_examples/sun3d-mit_76_studyroom-76-1studyroom2__ref18_src65__mspki.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "indoor_both",
+    "variant": "baseline",
+    "ir_pct": 20.7,
+    "rre_deg": 5.798057556152344,
+    "rte_m": 0.08635146170854568,
+    "success": true,
+    "npz_sha256": "37cac5f2d15bb35ded6487ea8ba3e3b743c357a48e19bbeb54d6e3f7ed6cbc75",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\indoor\\candidate_npz\\7-scenes-redkitchen__ref0_src32__baseline.npz",
+    "packaged_npz": "qualitative_examples/7-scenes-redkitchen__ref0_src32__baseline.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "indoor_both",
+    "variant": "mspki",
+    "ir_pct": 63.05,
+    "rre_deg": 2.488370418548584,
+    "rte_m": 0.06334260106086731,
+    "success": true,
+    "npz_sha256": "e14729daea51d5758ce28a870a9655235a55c88ca67bf78dd7518599548fcc8c",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\indoor\\candidate_npz\\7-scenes-redkitchen__ref0_src32__mspki.npz",
+    "packaged_npz": "qualitative_examples/7-scenes-redkitchen__ref0_src32__mspki.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "kitti_rescue",
+    "variant": "baseline",
+    "ir_pct": 1.2000000104308128,
+    "rre_deg": 174.99459838867188,
+    "rte_m": 18.87615203857422,
+    "success": false,
+    "npz_sha256": "3c4d3920a2ae8bc47004ce7456c33039126dac0bf7d96a532949ae5d661e8e0e",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\fig5_refresh_20260927\\latest_pair\\seq09_ref40_src25_baseline.npz",
+    "packaged_npz": "qualitative_examples/seq09_ref40_src25_baseline.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "kitti_rescue",
+    "variant": "mspki",
+    "ir_pct": 68.30000281333923,
+    "rre_deg": 0.1724584996700287,
+    "rte_m": 0.05681260675191879,
+    "success": true,
+    "npz_sha256": "bd3996973672790e3966254125a075e41559f17a0ff7b465de0c227d7976d28d",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\fig5_refresh_20260927\\latest_pair\\seq09_ref40_src25_mspki.npz",
+    "packaged_npz": "qualitative_examples/seq09_ref40_src25_mspki.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "kitti_both",
+    "variant": "baseline",
+    "ir_pct": 32.0,
+    "rre_deg": 0.22381176054477692,
+    "rte_m": 0.06394552439451218,
+    "success": true,
+    "npz_sha256": "90f3ec044cfa525cdb86f2ff30811f02441efea4286de4ffff3ae91743607443",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\kitti\\candidate_npz\\seq09__ref428_src418__baseline.npz",
+    "packaged_npz": "qualitative_examples/seq09__ref428_src418__baseline.npz"
+  },
+  {
+    "figure": "qualitative_supplementary",
+    "row": "kitti_both",
+    "variant": "mspki",
+    "ir_pct": 76.4,
+    "rre_deg": 0.20174117386341095,
+    "rte_m": 0.04760405793786049,
+    "success": true,
+    "npz_sha256": "4a58b80f0a7fa13122683fdb0e25892e551fefde5bc2e77529947bc643ba2e32",
+    "source_npz": "D:\\projects\\Deep Learning-based Point Cloud Registration\\PARENet\\paper\\manuscript_figures_600dpi_20260924\\_input_cache\\qualitative\\kitti\\candidate_npz\\seq09__ref428_src418__mspki.npz",
+    "packaged_npz": "qualitative_examples/seq09__ref428_src418__mspki.npz"
+  }
+]

@@ -1,0 +1,3 @@
+benchmark,variant,seed,params,PIR,FMR,IR,RR,RRE_deg,RTE_cm,pairs
+3DMatch,N32-only,7351,3893196,82.40,98.80,73.90,92.90,1.823,6.20,1623
+3DLoMatch,N32-only,7351,3893196,51.00,88.50,43.80,77.20,2.963,9.00,1781

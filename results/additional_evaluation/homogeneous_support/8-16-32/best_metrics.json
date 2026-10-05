@@ -1,0 +1,17 @@
+{
+  "code_version": "mspki-official-protocol-v1",
+  "variant": "mspki",
+  "canonical_variant": "mspki",
+  "seed": 7351,
+  "re_feature_source": "official",
+  "best_epoch": 30,
+  "validation": {
+    "PIR": 0.6500692618332081,
+    "IR": 0.6197701279112613,
+    "RRE": 7.304444271654092,
+    "RTE": 0.1870043681273069,
+    "RMSE": 0.12070255433202243,
+    "RR": 0.9188580015026296
+  },
+  "checkpoint": "/root/rivermind-data/PARENet/output/3DMatch_ablation_new/mspki/re_official/seed_7351/snapshots/best.pth.tar"
+}

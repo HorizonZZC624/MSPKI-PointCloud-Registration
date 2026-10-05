@@ -1,0 +1,19 @@
+{
+  "archive": "/home/zouzichao/PARENet/output/KITTI_density_stress_complete_analysis.tar.gz",
+  "archive_sha256": "92300346f1504052dee68a4a05536f90281b5324aa20821d64e0a15bb1a8016a",
+  "ratios": [
+    0.5,
+    0.25
+  ],
+  "training_seeds": [
+    2026,
+    3407,
+    7351
+  ],
+  "complete_test_set": true,
+  "geometry_requested": true,
+  "geometry_voxel_size_m": 2.0,
+  "missing_geometry_caches": [],
+  "geometry_definition": "Inlier cell fraction is occupied inlier cells divided by occupied cells of all predicted correspondences in the reference frame, not whole-scene coverage. Covariance ratios are descriptive; planar structure alone does not imply pose failure.",
+  "completed": true
+}
